@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">Truck Finder</string>
-    <string name="msgRedirect">正在跳转</string>
-    <string name="msgIgnore">点击跳过</string>
-    <string name="promotionaddress">https://ecoshop-songlin81.c9users.io/ad.png</string>
+    <string name="msgRedirect">Redirecting</string>
+    <string name="msgIgnore">Skip</string>
+    <string name="promotionaddress">http://101.200.57.42/dist/img/promotionplaceholder.png</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Engine</string>
+    <string name="slide_1_desc">Tune for power or economy!</string>
+    <string name="slide_2_title">Fleet Management</string>
+    <string name="slide_2_desc">Develop a comprehensive checklist!</string>
+    <string name="slide_3_title">Quality Care</string>
+    <string name="slide_3_desc">Most advanced distribution network!</string>
+    <string name="slide_4_title">Non-stop</string>
+    <string name="slide_4_desc">Heavy duty truck maintenance!</string>
 </resources>

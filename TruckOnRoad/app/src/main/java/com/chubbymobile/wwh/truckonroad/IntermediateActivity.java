@@ -31,17 +31,17 @@ public class IntermediateActivity extends Activity {
 
         ButterKnife.bind(this);
 
-        mc = new MyCountDownTimer(3000, 1000);
+        mc = new MyCountDownTimer(4000, 1000);
         mc.start();
         myHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 startWelcomeActivity();
             }
-        }, 3000);
+        }, 4000);
 
         Uri uri = Uri.parse(getString(R.string.promotionaddress));
-        SimpleDraweeView draweeView = (SimpleDraweeView) findViewById(R.id.my_image_view);
+        SimpleDraweeView draweeView = findViewById(R.id.my_image_view);
         draweeView.setImageURI(uri);
     }
 
