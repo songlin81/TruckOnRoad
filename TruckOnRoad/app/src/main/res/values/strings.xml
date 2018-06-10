@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">TruckOnRoad</string>
+    <string name="app_name">Truck Finder</string>
+    <string name="msgRedirect">正在跳转</string>
+    <string name="msgIgnore">点击跳过</string>
+    <string name="promotionaddress">https://ecoshop-songlin81.c9users.io/ad.png</string>
 </resources>
