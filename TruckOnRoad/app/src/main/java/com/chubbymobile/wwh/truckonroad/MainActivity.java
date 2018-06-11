@@ -66,11 +66,12 @@ public class MainActivity extends AppCompatActivity implements IShowBookingView{
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode== KeyEvent.KEYCODE_BACK) {
-            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        /*if (keyCode== KeyEvent.KEYCODE_BACK) {
+            Intent intent = new Intent(MainActivity.this, .class);
             startActivity(intent);
             finish();
         }
+        */
         return super.onKeyDown(keyCode, event);
     }
 }
