@@ -1,77 +1,81 @@
 package com.chubbymobile.wwh.truckonroad;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
+import com.chubbymobile.wwh.truckonroad.utility.Adapter;
+import com.chubbymobile.wwh.truckonroad.view.ChassisFragment;
+import com.chubbymobile.wwh.truckonroad.view.ElectricFragment;
+import com.chubbymobile.wwh.truckonroad.view.EngineFragment;
+import com.chubbymobile.wwh.truckonroad.view.WheelFragment;
 
-import com.chubbymobile.wwh.truckonroad.bean.Booking;
-import com.chubbymobile.wwh.truckonroad.presenter.BookingInfoPresenter;
-import com.chubbymobile.wwh.truckonroad.view.IShowBookingView;
+import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements IShowBookingView{
+public class MainActivity extends AppCompatActivity{
 
-    private Button btn;
-    private TextView model, make, location;
-    private ProgressDialog pd = null;
-    private BookingInfoPresenter bookingInfoPresenter;
+    private TabLayout tlMain;
+    private ViewPager vpMain;
+    private Adapter adapter;
+
+    private int[] tabIcons = {
+            R.drawable.wheel,
+            R.drawable.chassis,
+            R.drawable.battery,
+            R.drawable.engine
+    };
+
+    private ArrayList<String> titleList = new ArrayList<String>() {{
+        add("W");
+        add("E");
+        add("A");
+        add("T");
+    }};
+
+    private ArrayList<Fragment> fragmentList = new ArrayList<Fragment>() {{
+        add(new WheelFragment());
+        add(new ChassisFragment());
+        add(new ElectricFragment());
+        add(new EngineFragment());
+    }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        bookingInfoPresenter = new BookingInfoPresenter(this);
-        btn = (Button) findViewById(R.id.resbtn);
-        model = (TextView) findViewById(R.id.model);
-        make = (TextView) findViewById(R.id.make);
-        location = (TextView) findViewById(R.id.location);
-        pd = new ProgressDialog(this);
-        pd.setMessage("Loading……");
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bookingInfoPresenter.getBookingInfoToShow(1);
-            }
-        });
+        initView();
     }
 
-    @Override
-    public void showLoading() {
-        pd.show();
+    private void initView() {
+        tlMain = (TabLayout) findViewById(R.id.tlMain);
+        tlMain.setTabMode(TabLayout.MODE_FIXED);
+
+        vpMain = (ViewPager) findViewById(R.id.vpMain);
+
+        adapter = new Adapter(getSupportFragmentManager(), titleList, fragmentList);
+        vpMain.setAdapter(adapter);
+        tlMain.setupWithViewPager(vpMain, true);
+
+        setupTabIconsTitles();
+        getLineIndicator();
     }
 
-    @Override
-    public void hideLoading() {
-        pd.cancel();
-    }
-
-    @Override
-    public void toMainActivity(Booking booking) {
-        model.setText(booking.getModel());
-        make.setText(booking.getMake());
-        location.setText(booking.getLocation());
-    }
-
-    @Override
-    public void showFailedError() {
-        Toast.makeText(this, "Failure occurred.", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        /*if (keyCode== KeyEvent.KEYCODE_BACK) {
-            Intent intent = new Intent(MainActivity.this, .class);
-            startActivity(intent);
-            finish();
+    private void setupTabIconsTitles() {
+        int childCount = 4;
+        for (int i = 0; i < childCount; i++) {
+            tlMain.getTabAt(i).setIcon(tabIcons[i]);
+            tlMain.getTabAt(i).setText("");
         }
-        */
-        return super.onKeyDown(keyCode, event);
+    }
+
+    private void getLineIndicator() {
+        tlMain.setRotationX(180);
+        LinearLayout tabListed = ((LinearLayout) tlMain.getChildAt(0));
+        for(int position = 0;position<tabListed.getChildCount();position++) {
+            LinearLayout item=((LinearLayout) tabListed.getChildAt(position));
+            item.setRotationX(180);
+        }
     }
 }

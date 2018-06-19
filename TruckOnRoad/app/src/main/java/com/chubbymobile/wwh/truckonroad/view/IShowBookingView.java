@@ -8,7 +8,7 @@ public interface IShowBookingView {
 
     void hideLoading();
 
-    void toMainActivity(Booking booking);
+    void toActivity(Booking booking);
 
     void showFailedError();
 

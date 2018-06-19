@@ -8,6 +8,7 @@ import com.chubbymobile.wwh.truckonroad.model.OnBookingInfoListener;
 import com.chubbymobile.wwh.truckonroad.view.IShowBookingView;
 
 public class BookingInfoPresenter {
+
     private IGetBooking iGetBooking;
     private IShowBookingView iShowBookingView;
     private Handler mHandler = new Handler();
@@ -26,7 +27,7 @@ public class BookingInfoPresenter {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iShowBookingView.toMainActivity(booking);
+                        iShowBookingView.toActivity(booking);
                         iShowBookingView.hideLoading();
                     }
                 });
