@@ -3,10 +3,11 @@ package com.chubbymobile.wwh.truckonroad.utility;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 
-public class Adapter extends FragmentPagerAdapter {
+public class Adapter extends FragmentStatePagerAdapter {
     private ArrayList<String> titleList;
     private ArrayList<Fragment> fragmentList;
 

@@ -14,7 +14,7 @@ import com.chubbymobile.wwh.truckonroad.R;
 import com.chubbymobile.wwh.truckonroad.bean.Booking;
 import com.chubbymobile.wwh.truckonroad.presenter.BookingInfoPresenter;
 
-public class WheelFragment extends Fragment implements IShowBookingView{
+public class WheelFragment extends Fragment implements IShowBookingView {
 
     private Button btn;
     private TextView model, make, location;

@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ImageView
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_gravity="center"
+        android:id="@+id/listItemNoteHeader"
+        android:src="@drawable/volvologo"
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/abc_action_bar_default_height_material" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Menu"
+        android:id="@+id/textView"
+        android:layout_gravity="left|center_horizontal"
+        android:layout_marginTop="@dimen/abc_dialog_padding_material"
+        android:layout_marginLeft="@dimen/abc_dialog_padding_material" />
+
+    <ListView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/listV"
+        android:layout_gravity="left|center_horizontal"
+        android:layout_marginTop="@dimen/abc_dialog_padding_material"
+        android:layout_marginLeft="@dimen/abc_dialog_padding_material" />
 
 </LinearLayout>
