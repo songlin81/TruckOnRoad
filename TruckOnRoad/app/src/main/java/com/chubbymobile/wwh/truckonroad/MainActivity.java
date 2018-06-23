@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import com.chubbymobile.wwh.truckonroad.utility.Adapter;
@@ -133,5 +134,26 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_search) {
+            return true;
+        }else if (id != R.id.action_notifications) {
+            startActivity(new Intent(MainActivity.this, NotificationActivity.class));
+            return true;
+        }else {
+            startActivity(new Intent(MainActivity.this, EmptyActivity.class));
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
