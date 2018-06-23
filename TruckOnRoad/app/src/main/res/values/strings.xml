@@ -31,4 +31,5 @@
     <string name="help_center">Help Center</string>
     <string name="title_activity_account">AccountActivity</string>
     <string name="title_activity_empty">EmptyActivity</string>
+    <string name="title_activity_enquiry">EnquiryActivity</string>
 </resources>

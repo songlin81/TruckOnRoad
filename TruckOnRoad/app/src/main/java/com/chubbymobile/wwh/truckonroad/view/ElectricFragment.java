@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 import com.chubbymobile.wwh.truckonroad.R;
 import com.chubbymobile.wwh.truckonroad.bean.Parts;
 import com.chubbymobile.wwh.truckonroad.presenter.PartsInfoPresenter;
@@ -47,9 +48,9 @@ public class ElectricFragment extends Fragment implements IShowPartsView {
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 Object o = lv1.getItemAtPosition(position);
                 Parts obj_itemDetails = (Parts)o;
-                LogManager.getLogger().i("TruckOnRoad", "Triggered: " + obj_itemDetails.getName());
                 mAdapter.setSelectedIndex(position);
                 mAdapter.notifyDataSetChanged();
+                LogManager.getLogger().i("TruckOnRoad", "Triggered: " + obj_itemDetails.getName());
             }
         });
     }
