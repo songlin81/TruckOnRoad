@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.chubbymobile.wwh.truckonroad.R;
+import com.chubbymobile.wwh.truckonroad.bean.Reservations;
 import com.chubbymobile.wwh.truckonroad.utility.ItemDecoration;
 import com.chubbymobile.wwh.truckonroad.utility.log.ChassisAdapter;
 
@@ -30,11 +31,15 @@ public class ChassisFragment extends Fragment {
 
         chassis_rv = view.findViewById(R.id.ch_rv);
 
-        List<String> dataList = new ArrayList<>();
-        dataList.add("Standard variants");
-        dataList.add("Optional variants");
-        dataList.add("Price list");
-        dataList.add("Market place");
+        List<Reservations> dataList = new ArrayList<>();
+        Reservations item = new Reservations();
+        item.setDescription("Reservations");
+        item.setNumbers("12");
+        dataList.add(item);
+        item = new Reservations();
+        item.setDescription("Cancellations");
+        item.setNumbers("2");
+        dataList.add(item);
 
         final ChassisAdapter adapter = new ChassisAdapter(dataList);
         chassis_rv.setAdapter(adapter);
@@ -43,7 +48,7 @@ public class ChassisFragment extends Fragment {
         layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                return adapter.isHeader(position) ? layoutManager.getSpanCount() : 1;
+                return adapter.isHeader(position)||adapter.isFooter(position) ? layoutManager.getSpanCount() : 1;
             }
         });
 
