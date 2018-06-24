@@ -8,12 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.chubbymobile.wwh.truckonroad.R;
 import com.chubbymobile.wwh.truckonroad.bean.Reservations;
 import com.chubbymobile.wwh.truckonroad.utility.ItemDecoration;
-import com.chubbymobile.wwh.truckonroad.utility.log.ChassisAdapter;
-
+import com.chubbymobile.wwh.truckonroad.utility.ChassisAdapter;
 import java.util.ArrayList;
 import java.util.List;
 

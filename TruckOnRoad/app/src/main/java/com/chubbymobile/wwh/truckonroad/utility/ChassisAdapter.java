@@ -1,4 +1,4 @@
-package com.chubbymobile.wwh.truckonroad.utility.log;
+package com.chubbymobile.wwh.truckonroad.utility;
 
 import android.content.Context;
 import android.content.Intent;
