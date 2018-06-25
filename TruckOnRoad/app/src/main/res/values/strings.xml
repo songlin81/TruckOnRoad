@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Truck Finder</string>
+    <string name="app_name">Online Booking</string>
     <string name="msgRedirect">Redirecting</string>
     <string name="msgIgnore">Skip</string>
     <string name="promotionaddress">http://101.200.57.42/dist/img/promotionplaceholder.png</string>
@@ -37,4 +37,5 @@
     <string name="action_notifications">Notifications</string>
     <string name="title_activity_notification">NotificationActivity</string>
     <string name="dates">Choose Date</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item1"
+            android:icon="@drawable/book"
+            android:title="My Vehicle" />
+        <item
+            android:id="@+id/nav_item2"
+            android:icon="@drawable/book"
+            android:title="Nearby Dealer" />
+        <item
+            android:id="@+id/nav_item3"
+            android:icon="@drawable/book"
+            android:title="Online Booking" />
+        <item
+            android:id="@+id/nav_item4"
+            android:icon="@drawable/book"
+            android:title="Loyalty Points" />
+        <item
+            android:id="@+id/nav_item5"
+            android:icon="@drawable/book"
+            android:title="Y" />
+        <item
+            android:id="@+id/nav_item6"
+            android:icon="@drawable/book"
+            android:title="X" />
+    </group>
+</menu>
