@@ -1,5 +1,6 @@
 package com.chubbymobile.wwh.truckonroad.view;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.view.ViewGroup.LayoutParams;
+
+import com.chubbymobile.wwh.truckonroad.DetailActivity;
 import com.chubbymobile.wwh.truckonroad.R;
 import com.chubbymobile.wwh.truckonroad.utility.ListViewAdapter;
 
@@ -52,8 +55,9 @@ public class OneFragment extends Fragment implements AdapterView.OnItemClickList
         return view;
     }
     public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
-        // TODO Auto-generated method stub
-        
+        Intent intent = new Intent(getActivity(), DetailActivity.class);
+        intent.putExtra("ticketId", position);
+        startActivity(intent);
     }
 
     private int getScreenHeight() {
