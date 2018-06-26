@@ -1,14 +1,16 @@
 package com.chubbymobile.wwh.truckonroad.view;
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
+import android.view.ViewGroup.LayoutParams;
 import com.chubbymobile.wwh.truckonroad.R;
 import com.chubbymobile.wwh.truckonroad.utility.ListViewAdapter;
 
@@ -31,7 +33,16 @@ public class OneFragment extends Fragment implements AdapterView.OnItemClickList
         View view = inflater.inflate(R.layout.oneview, container, false);
 
         lview1 = view.findViewById(R.id.listView2);
-        lviewAdapter = new ListViewAdapter(getActivity(), entry1, entry2);
+        lviewAdapter = new ListViewAdapter(getActivity(), entry1, entry2){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent){
+                View view = super.getView(position,convertView,parent);
+                LayoutParams params = view.getLayoutParams();
+                params.height = getScreenHeight()/10;
+                view.setLayoutParams(params);
+                return view;
+            }
+        };
         lview1.setAdapter(lviewAdapter);
         lview1.setOnItemClickListener(this);
         lview2 = view.findViewById(R.id.listView1);
@@ -42,6 +53,13 @@ public class OneFragment extends Fragment implements AdapterView.OnItemClickList
     }
     public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
         // TODO Auto-generated method stub
-        //Toast.makeText(this,"Title => "+month[position]+"=> n Description"+number[position], Toast.LENGTH_SHORT).show();
+        
+    }
+
+    private int getScreenHeight() {
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        return size.y;
     }
 }
