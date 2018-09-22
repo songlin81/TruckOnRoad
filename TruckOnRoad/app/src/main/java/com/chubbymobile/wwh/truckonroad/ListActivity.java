@@ -106,7 +106,7 @@ public class ListActivity extends AppCompatActivity
         } else if (id == R.id.nav_item2) {
             startActivity(new Intent(ListActivity.this, ListActivity.class));
         }else if (id == R.id.nav_item3) {
-            startActivity(new Intent(ListActivity.this, OnlineBookingActivity.class));
+            startActivity(new Intent(ListActivity.this, ListActivity.class));
         }else if (id == R.id.nav_item4) {
             startActivity(new Intent(ListActivity.this, ListActivity.class));
         }else if (id == R.id.nav_item5) {

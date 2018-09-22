@@ -39,10 +39,8 @@ public class OneFragment extends Fragment implements AdapterView.OnItemClickList
         lviewAdapter = new ListViewAdapter(getActivity(), entry1, entry2){
             @Override
             public View getView(int position, View convertView, ViewGroup parent){
-                View view = super.getView(position,convertView,parent);
-                LayoutParams params = view.getLayoutParams();
-                params.height = getScreenHeight()/10;
-                view.setLayoutParams(params);
+                View view = super.getView(position, convertView, parent);
+                view.setLayoutParams(new ViewGroup.LayoutParams(getScreenWidth(), getScreenHeight()/10));
                 return view;
             }
         };
@@ -65,5 +63,12 @@ public class OneFragment extends Fragment implements AdapterView.OnItemClickList
         Point size = new Point();
         display.getSize(size);
         return size.y;
+    }
+
+    private int getScreenWidth() {
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        return size.x;
     }
 }
